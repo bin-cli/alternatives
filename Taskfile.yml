@@ -1,0 +1,65 @@
+version: '3'
+
+tasks:
+
+  hello:
+    desc: Output Hello World
+    cmds:
+      - echo 'Hello World'
+    silent: true
+
+  fail:
+    desc: A failing command
+    cmds:
+      - exit 123
+    silent: true
+
+
+  multiple:
+    desc: Multiple separate commands
+    cmds:
+      - echo one
+      - echo two
+    silent: true
+
+
+  multiline:
+    desc: Two commands listed together
+    cmds:
+      - |
+        echo one
+        echo two
+    silent: true
+
+
+  semicolon:
+    desc: Two commands separated by a semicolon
+    cmds:
+      - echo one; echo two
+    silent: true
+
+
+  and:
+    desc: Two commands separated by &&
+    cmds:
+      - echo one && echo two
+    silent: true
+
+  display-args:
+    desc: Echo the arguments passed to it
+    cmds:
+      - echo {{.CLI_ARGS}}
+    silent: true
+
+  git:
+    desc: Run Git
+    cmds:
+      - git {{.CLI_ARGS}}
+    silent: true
+
+  pwd:
+    desc: Run `pwd` to show the current working directory, without changing directory
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - pwd
+    silent: true

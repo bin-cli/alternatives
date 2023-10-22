@@ -1,0 +1,13 @@
+{
+    "scripts": {
+        "hello": "echo 'Hello World'",
+        "hi": "npm run hello",
+        "hi-yarn": "yarn hello",
+        "fail": "exit 123",
+        "semicolon": "echo one; echo two",
+        "and": "echo one && echo two",
+        "display-args": "echo",
+        "git": "git",
+        "pwd": "pwd"
+    }
+}
